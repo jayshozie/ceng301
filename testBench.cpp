@@ -2,10 +2,11 @@
 
 int main()
 {
-    for (int i=0; i<5; i++)
-    {
-        std::cout << i;
-    }
-    std::cout << std::endl;
+    int x = 10;
+    int* ptr = &x;
+
+    std::cout << "x : " << x << std::endl;
+    std::cout << "Memory address of x: " << ptr << std::endl;
+
     return 0;
 }
