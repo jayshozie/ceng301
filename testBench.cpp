@@ -2,11 +2,20 @@
 
 int main()
 {
-    int x = 10;
-    int* ptr = &x;
+    int a, b, *p;
 
-    std::cout << "x : " << x << std::endl;
-    std::cout << "Memory address of x: " << ptr << std::endl;
+    a = b = 7;
+    p = &a;
+    // 1st print statement
+    std::cout << "p = " << p << std::endl;
 
-    return 0;
+    *p = 3;
+    // 2nd print statement
+    std::cout << "a = " << a << std::endl;
+
+    p = &b;
+
+    *p = 2 * *p - a;
+    // 3rd print statement
+    std::cout << "b = " << b << std::endl;
 }
