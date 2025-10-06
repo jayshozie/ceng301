@@ -1,15 +1,18 @@
 #include <iostream>
 
-void setIntToZero (int var) {
-    std::cout << "var = " << var << std::endl;
-    var = 0;
-    std::cout << "var = " << var << std::endl;
+void swap(int *p, int *q){
+    int tmp;
+    tmp = *p;
+    *p = *q;
+    *q = tmp;
 }
 
 int main()
 {
-    int a = 5;
-    std::cout << "a = " << a << std::endl;
-    setIntToZero(a);
-    std::cout << "a = " << a << std::endl;
+    int a = 3;
+    int b = 7;
+    std::cout << a << " " << b << std::endl;
+    swap(&a,&b);
+    std::cout << a << " " << b << std::endl;
+    return 0;
 }
