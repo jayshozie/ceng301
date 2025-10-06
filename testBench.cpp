@@ -1,10 +1,15 @@
 #include <iostream>
 
+void swap(int &a, int &b) {
+    int tmp = a; // a is an alias
+    a = b;
+    b = tmp;
+}
+
 int main()
 {
-    int *p = new int;
-    *p = 10;
-    int &r = *p;
-    r++;
-    std::cout << *p << std::endl;
+    int x = 10, y = 20;
+    std::cout << x << ' ' << y << std::endl;
+    swap(x, y);
+    std::cout << x << ' ' << y << std::endl;
 }
