@@ -76,7 +76,7 @@ solutions may be very long or hard to understand. This directory is more of an
 archive than study material, but you can check them out for your own
 assignments. You can find the question in the assignment's own C++ file.
 
-- **[[/lab-quizzes](./lab-quizzes):** These three are the quizzes that we took
+- **[/lab-quizzes](./lab-quizzes):** These three are the quizzes that we took
 in that course. They were taken in either the MM building or the CENG building.
 They are meant to be solved without outside help in an hour or so. I'll try to
 provide the questions with as much detail as I can remember but we're not
