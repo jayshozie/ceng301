@@ -56,9 +56,36 @@ have the original license and copyright notice.
 4. You can view the files directly in your browser.
 
 ## File Info's
-**Languages Used:** C, C++
+**Languages Used:** C++
 
-###     TODO : ADD FILE INFO's AFTER CREATING THEM
+- **[/lecture-notes](./lecture-notes):** These are my lecture notes compiled
+from the stuff the instructor said during lecture hours, the slides provided
+by the TA, and stuff that I've added. They're written as markdowns, and uses
+markdown syntax, so I highly recommend you to view them either in an app that
+supports markdown or on Github. You can follow the course from these, they
+don't miss anything that is in the slides.
+
+- **[/exercises](./exercises):** These are C++/algorithms and data structures
+examples that I've either created or found on the internet. Each of them have
+it's own solution in [/exercises/solutions](./exercises/solutions). I recommend
+you to try to solve them, and then check the solution.
+
+- **[/assignments](./assignments):** These are online assignments that I was
+given during the course. They're meant to be solved in a few weeks, so their
+solutions may be very long or hard to understand. This directory is more of an
+archive than study material, but you can check them out for your own
+assignments. You can find the question in the assignment's own C++ file.
+
+- **[[/lab-quizzes](./lab-quizzes):** These three are the quizzes that we took
+in that course. They were taken in either the MM building or the CENG building.
+They are meant to be solved without outside help in an hour or so. I'll try to
+provide the questions with as much detail as I can remember but we're not
+allowed to use our phones, so I won't be able to get the exact wording.
+
+- **[/online-exercises](./online-exercises):** These are multiple-choice
+quizzes given on ODTÜClass every week. I may not be able to provide every
+option for every question, because after solving the quiz you can only see the
+answer you've picked and the correct one.
 
 ## Licensing
 
