@@ -20,18 +20,28 @@ To clone this repo to your local machine, please create a folder in your home
 directory (or anywhere you want) and then go into that directory and run that
 command.
 
+<details>
+    <summary> Bash (Linux Based Distros) </summary>
+
 ### Bash
 ```console
-foo@bar:~$ mkdir ceng301
+foo@bar:~$ git clone https://github.com/jayshozie/ceng301
 foo@bar:~$ cd ceng301
-foo@bar:~/ceng301$ git clone https://github.com/jayshozie/ceng301.git
+foo@bar:~/ceng301$
 ```
+You can find the material in the folder `ceng301` that git just created.
+</details>
+<details>
+    <summary> Command Prompt (Windows) </summary>
+
 ### Command Prompt
 ```console
-C:\Users\foo\Desktop> mkdir ceng301
+C:\Users\foo\Desktop> git clone https://github.com/jayshozie/ceng301
 C:\Users\foo\Desktop> cd ceng301
-C:\Users\foo\Desktop\ceng301> git clone https://github.com/jayshozie/ceng301.git
+C:\Users\foo\Desktop\ceng301>
 ```
+You can find the material in the folder `ceng301` that git just created.
+</details>
 
 2. If you don't have Git installed, or you prefer to download the files then
 you can download the ZIP file from the repository page, clicking the `Download`
