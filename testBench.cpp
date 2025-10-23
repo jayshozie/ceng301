@@ -1,14 +1,23 @@
 #include <iostream>
+#include <math.h>
 
-void fun2(int &a, int b) {
-    a = a * 2;
-    b = a + b;
-    std::cout << a << ' ' << b << std::endl;
-}
+class Rectangle {
+    double width, height;
+public:
+    void set_values(double, double);
+    double area() {return width*height;}
+};
+
+void Rectangle::set_values(double a, double b) {
+    height = a;
+    width = b;
+};
 
 int main()
 {
-    int x = 3, y = 5;
-    fun2(x,y);
-    std::cout << x << ' ' << y << std::endl;
+    Rectangle rect;
+    rect.set_values(sqrt(2), sqrt(2));
+    std::cout << "Area of rect = " << rect.area();
 }
+
+
