@@ -60,11 +60,12 @@ have the original license and copyright notice.
 
 - **[/lecture-notes](./lecture-notes):** These are my lecture notes compiled
 from the stuff the instructor said during lecture hours, the slides provided
-by the TA, and stuff that I've added. They're written as Github-flavored
-markdowns, and uses that syntax, so I highly recommend you to view them on
-Github. You can follow the course from these, they don't miss anything that is
-in the slides, on the contrary you'll probably learn more, because I add stuff
-that are not available on the slides but more than essential for the course.
+by the instructor, and stuff that I've added. They're written as
+Github-flavored markdowns, and uses that syntax, so I highly recommend you to
+view them on Github. You can follow the course from these, they don't miss
+anything that is in the slides, on the contrary you'll probably learn more,
+because I add stuff that are not available on the slides but more than
+essential for the course.
 
 - **[/exercises](./exercises):** These are C++/algorithms and data structures
 examples that I've either created or found on the internet. Each of them have
