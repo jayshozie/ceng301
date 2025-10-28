@@ -1,23 +1,19 @@
 #include <iostream>
 #include <math.h>
 
-class Rectangle {
-    double width, height;
-public:
-    void set_values(double, double);
-    double area() {return width*height;}
-};
-
-void Rectangle::set_values(double a, double b) {
-    height = a;
-    width = b;
-};
+long long int fibonacci(long long int n){
+    if (n == 0)
+        return 0;
+    else if (n == 1)
+        return 1;
+    else
+        return (n + fibonacci(n-1));
+}
 
 int main()
 {
-    Rectangle rect;
-    rect.set_values(sqrt(2), sqrt(2));
-    std::cout << "Area of rect = " << rect.area();
+    long long int x = fibonacci(100);
+    std::cout << x << std::endl;
 }
 
 
