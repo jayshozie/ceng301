@@ -1,41 +1,24 @@
 #include <iostream>
-#include <math.h>
+#include <cmath>
+#include "testBench.h"
 
-class IntCell
-{
-public:
-    IntCell(){
-        storedValue = 0;
-    }
-    IntCell(int initialValue){
-        storedValue = initialValue;
-    }
-    void read();
-    void write(int x);
-private:
-    int storedValue;
-};
-
-void IntCell::read(){
-    std::cout << storedValue << std::endl;
+Complex Complex::operator*(const Complex& rhs) const {
+    Complex prod;
+    prod.re = (re*rhs.re - im*rhs.im);
+    prod.im = (re*rhs.im - im*rhs.re);
+    return prod;
 }
-
-void IntCell::write(int x){
-    this->storedValue = x;
+float Complex::modulus() const {
+    return sqrt(re*re + im*im);
+}
+void Complex::print() const {
+    std::cout << '(' << re << ',' << im << ')' << std::endl;
 }
 
 int main()
 {
-    int *p = new int;
-    IntCell *c = new IntCell;
+    Complex c1, c2(2,3), c3(1,2);
 
-    *p = 42;
-    (*c).write(4);
-
-    std::cout << *p << std::endl;
-    (*c).read();
-
-    delete c;
-    delete p;
+    c1 = c2 * c3;
+    c1.print();
 }
-
