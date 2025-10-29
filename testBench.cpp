@@ -1,19 +1,19 @@
 #include <iostream>
 #include <math.h>
 
-long long int fibonacci(long long int n){
-    if (n == 0)
-        return 0;
-    else if (n == 1)
-        return 1;
-    else
-        return (n + fibonacci(n-1));
+#include <iostream>
+
+void foo(){
+    int x = 42;
+    std::cout << "x in foo9): " << x << std::endl;
+    std::cout << "&x in foo(): " << &x << std::endl;
 }
 
 int main()
 {
-    long long int x = fibonacci(100);
-    std::cout << x << std::endl;
+    int num = 7;
+    std::cout << "num in main(): " << num << std::endl;
+    std::cout << "&num in main(): " << &num << std::endl;
+    foo();
 }
-
 
