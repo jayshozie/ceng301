@@ -1,19 +1,41 @@
 #include <iostream>
 #include <math.h>
 
-#include <iostream>
+class IntCell
+{
+public:
+    IntCell(){
+        storedValue = 0;
+    }
+    IntCell(int initialValue){
+        storedValue = initialValue;
+    }
+    void read();
+    void write(int x);
+private:
+    int storedValue;
+};
 
-void foo(){
-    int x = 42;
-    std::cout << "x in foo9): " << x << std::endl;
-    std::cout << "&x in foo(): " << &x << std::endl;
+void IntCell::read(){
+    std::cout << storedValue << std::endl;
+}
+
+void IntCell::write(int x){
+    this->storedValue = x;
 }
 
 int main()
 {
-    int num = 7;
-    std::cout << "num in main(): " << num << std::endl;
-    std::cout << "&num in main(): " << &num << std::endl;
-    foo();
+    int *p = new int;
+    IntCell *c = new IntCell;
+
+    *p = 42;
+    (*c).write(4);
+
+    std::cout << *p << std::endl;
+    (*c).read();
+
+    delete c;
+    delete p;
 }
 
