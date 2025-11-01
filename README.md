@@ -67,10 +67,10 @@ anything that is in the slides, on the contrary you'll probably learn more,
 because I add stuff that are not available on the slides but more than
 essential for the course.
 
-- **[/exercises](./exercises):** These are C++/algorithms and data structures
-examples that I've either created or found on the internet. Each of them have
-it's own solution in [/exercises/solutions](./exercises/solutions). I recommend
-you to try to solve them, and then check the solution.
+- **[/exercises](./exercises):** These are C++ algorithms and data structures
+examples that I've either created myself or found on the internet. Each of them
+have it's own solution in [/exercises/solutions](./exercises/solutions). I
+recommend you to try to solve them, and then check the solution.
 
 - **[/assignments](./assignments):** These are online assignments that I was
 given during the course. They're meant to be solved in a few weeks, so their
