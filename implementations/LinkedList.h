@@ -1,3 +1,6 @@
+#ifndef _Linked_List_H_
+#define _Linked_List_H_
+
 #include <iostream>
 #include <sstream>
 #include <stdexcept>
@@ -70,7 +73,7 @@ public:
     //     length++; // Increase the size
     // }
     void add(int value, int index = -1) { // Add an element at a specific index, we'll use the second constructor
-        if (index == -1) { // index normalization
+        if (index == -1) { // default value to append
             index = this->length;
         }
 
@@ -138,11 +141,11 @@ public:
         }
         current->data = value; // Set the data at the given index
     }
-    void remove_the_value(int value) {
+    void remove_value(int value) {
         int index = lookup_value(value);
-        remove_at_index(index);
+        remove_index(index);
     }
-    void remove_at_index(int index) { // Remove the element at a specific index
+    void remove_index(int index) { // Remove the element at a specific index
         if (index < 0 || index >= length) { // Check for valid index
             std::stringstream ss;
             ss << "Error: Removal index " << index << " is out of bounds. Valid range: " << "[0, " << this->length - 1 << "]" << std::endl;
@@ -201,3 +204,5 @@ public:
 //     listB->print();
 //     delete listB;
 // }
+
+#endif
