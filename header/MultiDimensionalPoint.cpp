@@ -197,20 +197,18 @@ MultiDimensionalPoint::kClosestPoints(MultiDimensionalPoint* pointsArray,
             double distances[numberOfPoints];
             int indices[numberOfPoints];
 
-            for (int i = 0; i < numberOfPoints; i++) {
+            for(int i = 0; i < numberOfPoints; i++) {
                 distances[i] = this->euclideanDistance(pointsArray[i]);
                 indices[i] = i;
             }
 
             // sort both arrays by sorting array distances
-            for (int i = 0; i < k; i++) {
+            for(int i = 0; i < k; i++) {
                 int minIndex = i;
-                for (int j = i + 1; j < numberOfPoints; j++) {
-                    if (distances[j] < distances[minIndex]) {
-                        minIndex = j;
-                    }
+                for(int j = i + 1; j < numberOfPoints; j++) {
+                    if(distances[j] < distances[minIndex]) { minIndex = j; }
                 }
-                if (minIndex != i) {
+                if(minIndex != i) {
                     double tmpDist = distances[i];
                     distances[i] = distances[minIndex];
                     distances[minIndex] = tmpDist;
@@ -220,10 +218,11 @@ MultiDimensionalPoint::kClosestPoints(MultiDimensionalPoint* pointsArray,
                     indices[minIndex] = tmpIndex;
                 }
             } // sorted
-            
+
             // fill retPtrArr
-            for (int j = 0; j < k; j++) {
-                retPtrArr[j] = new MultiDimensionalPoint(pointsArray[indices[j]]);
+            for(int j = 0; j < k; j++) {
+                retPtrArr[j]
+                    = new MultiDimensionalPoint(pointsArray[indices[j]]);
             }
             return retPtrArr;
         }
