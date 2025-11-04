@@ -55,10 +55,10 @@ double MultiDimensionalPoint::getCoordinate(int x) const
 void MultiDimensionalPoint::setCoordinate(int x, double value)
 {
     if(x < 0 || x >= this->dimension) {
-        std::stringstream ss;
-        ss << "ERR:: " << x << " is out of range. Valid range: [0, "
+        std::stringstream errStr;
+        errStr << "ERR:: " << x << " is out of range. Valid range: [0, "
            << this->dimension - 1 << "]" << std::endl;
-        throw std::out_of_range(ss.str());
+        throw std::out_of_range(errStr.str());
     }
     this->coordinates[x] = value;
 }
@@ -86,10 +86,10 @@ MultiDimensionalPoint::euclideanDistance(const MultiDimensionalPoint& rhs) const
 {
     // their dimensions must match
     if(this->dimension != rhs.dimension) {
-        std::stringstream ss;
-        ss << "ERR: Dimensions don't match: " << this->dimension
+        std::stringstream errStr;
+        errStr << "ERR: Dimensions don't match: " << this->dimension
            << " != " << rhs.dimension << std::endl;
-        throw std::out_of_range(ss.str());
+        throw std::out_of_range(errStr.str());
     }
     double total = 0;
     for(int i = 0; i < this->dimension; i++) {
@@ -106,10 +106,10 @@ MultiDimensionalPoint::manhattanDistance(const MultiDimensionalPoint& rhs) const
 {
     // their dimensions must match
     if(this->dimension != rhs.dimension) {
-        std::stringstream ss;
-        ss << "ERR: Dimensions don't match: " << this->dimension
+        std::stringstream errStr;
+        errStr << "ERR: Dimensions don't match: " << this->dimension
            << " != " << rhs.dimension << std::endl;
-        throw std::out_of_range(ss.str());
+        throw std::out_of_range(errStr.str());
     }
     double total = 0;
     for(int i = 0; i < this->dimension; i++) {
@@ -180,10 +180,10 @@ MultiDimensionalPoint::kClosestPoints(MultiDimensionalPoint* pointsArray,
                                       int numberOfPoints, int k) const
 {
     if(numberOfPoints < k) {
-        std::stringstream ss;
-        ss << "ERR: Not enough points: " << numberOfPoints << " < " << k
+        std::stringstream errStr;
+        errStr << "ERR: Not enough points: " << numberOfPoints << " < " << k
            << std::endl;
-        throw std::out_of_range(ss.str());
+        throw std::out_of_range(errStr.str());
     }
     else {
         MultiDimensionalPoint** retPtrArr = new MultiDimensionalPoint*[k];

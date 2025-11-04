@@ -50,10 +50,10 @@ public:
             index = this->length;
         }
         if(index < 0 || index > this->length) { // Check for valid index
-            std::stringstream ss;
-            ss << "Error: " << index << " is out of bounds: " << "[0, "
+            std::stringstream errStr;
+            errStr << "Error: " << index << " is out of bounds: " << "[0, "
                << this->length << "]" << std::endl;
-            throw std::out_of_range(ss.str()); // Error handling
+            throw std::out_of_range(errStr.str()); // Error handling
         }
         if(this->length >= this->capacity) { // not enough capacity
             int newCapacity = (this->capacity == 0) ? 1 : this->capacity * 2;
@@ -85,29 +85,29 @@ public:
         for(int i = 0; i < this->length; i++) {
             if(this->arr[i] == value) { return i; }
         }
-        std::stringstream ss;
-        ss << "Error: " << value << " is not in the list." << std::endl;
-        throw std::out_of_range(ss.str());
+        std::stringstream errStr;
+        errStr << "Error: " << value << " is not in the list." << std::endl;
+        throw std::invalid_argument(errStr.str());
     }
     int lookup_index(int index)
     { // Get the element at a specific index
         if(index < 0 || index >= this->length) { // Check for valid index
-            std::stringstream ss;
-            ss << "Error: Lookup index " << index
+            std::stringstream errStr;
+            errStr << "Error: Lookup index " << index
                << " is out of bounds. Valid range: " << "[0, "
                << this->length - 1 << "]" << std::endl;
-            throw std::out_of_range(ss.str()); // Error handling
+            throw std::out_of_range(errStr.str()); // Error handling
         }
         return this->arr[index]; // Return the element at the given index
     }
     void set(int value, int index)
     { // Set the element at a specific index
         if(index < 0 || index >= this->length) { // Check for valid index
-            std::stringstream ss;
-            ss << "Error: Set index " << index
+            std::stringstream errStr;
+            errStr << "Error: Set index " << index
                << " is out of bounds. Valid range: " << "[0, "
                << this->length - 1 << "]" << std::endl;
-            throw std::out_of_range(ss.str()); // Error handling
+            throw std::out_of_range(errStr.str()); // Error handling
         }
         this->arr[index] = value; // Set the element at the given index
     }
@@ -119,11 +119,11 @@ public:
     void remove_index(int index)
     { // Remove the element at a specific index
         if(index < 0 || index >= this->length) { // Check for valid index
-            std::stringstream ss;
-            ss << "Error: Removal index " << index
+            std::stringstream errStr;
+            errStr << "Error: Removal index " << index
                << " is out of bounds. Valid range: " << "[0, "
                << this->length - 1 << "]" << std::endl;
-            throw std::out_of_range(ss.str()); // Error handling
+            throw std::out_of_range(errStr.str()); // Error handling
         }
         for(int i = index; i < this->length - 1;
             i++) { // Shift elements to the left

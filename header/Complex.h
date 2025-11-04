@@ -46,9 +46,9 @@ public:
         Complex result;
         float divider = (rhs.re * rhs.re) + (rhs.im * rhs.im);
         if(divider == 0) {
-            std::stringstream errorString;
-            errorString << "Division by zero -> " << divider << std::endl;
-            throw std::logic_error(errorString.str());
+            std::stringstream errStr;
+            errStr << "Division by zero -> " << divider << std::endl;
+            throw std::logic_error(errStr.str());
         }
         float reDivident = (this->re * rhs.re) + (this->im * rhs.im);
         float imDivident = (this->im * rhs.re) - (this->re * rhs.im);
