@@ -1,6 +1,6 @@
+// ArrayList.h
 #ifndef _Array_List_H_
 #define _Array_List_H_
-
 #include <iostream>
 #include <sstream>
 #include <stdexcept>
