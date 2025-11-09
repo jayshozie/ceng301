@@ -1,3 +1,7 @@
+#include "Complex.h"
+#include "LinkedList.h"
+#include "ArrayList.h"
+#include "StackArray.h"
 #include "StackLinked.h"
 #include <iostream>
 
