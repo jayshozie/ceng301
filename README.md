@@ -16,9 +16,8 @@ command if you have Git installed:
 ```bash
 git clone https://github.com/jayshozie/ceng301
 ```
-To clone this repo to your local machine, please create a folder in your home
-directory (or anywhere you want) and then go into that directory and run that
-command.
+To clone this repo to your local machine, please open the drop-down of your
+operating system.
 
 <details>
     <summary> Bash (Linux Based Distros) </summary>
