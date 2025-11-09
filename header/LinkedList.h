@@ -23,16 +23,17 @@ private:
 public:
     LinkedList(): head(nullptr), length(0) {} // Constructor
     ~LinkedList(); // Destructor
-    LinkedList(const LinkedList& rhs);
-    LinkedList& operator=(const LinkedList& rhs);
+    LinkedList(const LinkedList& rhs); // Copy Constructor
+    LinkedList& operator=(const LinkedList& rhs); // Copy Assignment Operator
     void add(T value, int index = -1);
-    int lookup_value(T value);
-    T lookup_index(int index);
+    int lookup_value(T value) const;
+    T lookup_index(int index) const;
     void set(T value, int index);
     void remove_value(T value);
     void remove_index(int index);
-    int size();
-    void print();
+    int size() const;
+    void print() const;
+    bool isEmpty() const;
 };
 
 template<class T> LinkedList<T>::~LinkedList() // Destructor
@@ -71,7 +72,7 @@ LinkedList<T>& LinkedList<T>::operator=(const LinkedList<T>& rhs)
         // Copy elements from rhs
         current = rhs.head;
         while(current != nullptr) {
-            add(current->data);
+            this->add(current->data);
             current = current->next;
         }
     }
@@ -82,7 +83,6 @@ template<class T> void LinkedList<T>::add(T value, int index)
     if(index == -1) { // default value to append
         index = this->length;
     }
-
     if(index < 0 || index > this->length) { // error handling
         std::stringstream errStr;
         errStr << "Error: " << index << " is out of bounds: " << "[0, "
@@ -103,9 +103,9 @@ template<class T> void LinkedList<T>::add(T value, int index)
         ListNode<T>* newNode = new ListNode<T>(value, current->next);
         current->next = newNode;
     }
-    length++;
+    this->length++;
 }
-template<class T> int LinkedList<T>::lookup_value(T value)
+template<class T> int LinkedList<T>::lookup_value(T value) const
 {
     ListNode<T>* current = this->head;
     int i = 0;
@@ -120,17 +120,20 @@ template<class T> int LinkedList<T>::lookup_value(T value)
     errStr << "Error: " << value << " is not in the list." << std::endl;
     throw std::invalid_argument(errStr.str());
 }
-template<class T> T LinkedList<T>::lookup_index(int index)
+template<class T> T LinkedList<T>::lookup_index(int index) const
 { // Get the element at a specific index
     // get func via index logic
-    if(index < 0 || index >= length) { // Check for valid index
+    if(index == -1) {
+        index = this->length - 1;
+    }
+    if(index < 0 || index >= this->length) { // Check for valid index
         std::stringstream errStr;
         errStr << "Error: Lookup index " << index
                << " is out of bounds. Valid range: " << "[0, "
                << this->length - 1 << "]" << std::endl;
         throw std::out_of_range(errStr.str()); // Error handling
     }
-    ListNode<T>* current = head;
+    ListNode<T>* current = this->head;
     for(int i = 0; i < index; i++) { // Traverse to the index
         current = current->next;
     }
@@ -138,14 +141,17 @@ template<class T> T LinkedList<T>::lookup_index(int index)
 }
 template<class T> void LinkedList<T>::set(T value, int index)
 { // Set the element at a specific index
-    if(index < 0 || index >= length) { // Check for valid index
+    if(index == -1) {
+        index = this->length - 1;
+    }
+    if(index < 0 || index >= this->length) { // Check for valid index
         std::stringstream errStr;
         errStr << "Error: Set index " << index
                << " is out of bounds. Valid range: " << "[0, "
                << this->length - 1 << "]" << std::endl;
         throw std::out_of_range(errStr.str()); // Error handling
     }
-    ListNode<T>* current = head;
+    ListNode<T>* current = this->head;
     for(int i = 0; i < index; i++) { // Traverse to
         current = current->next;
     }
@@ -153,12 +159,15 @@ template<class T> void LinkedList<T>::set(T value, int index)
 }
 template<class T> void LinkedList<T>::remove_value(T value)
 {
-    int index = lookup_value(value);
-    remove_index(index);
+    int index = this->lookup_value(value);
+    this->remove_index(index);
 }
 template<class T> void LinkedList<T>::remove_index(int index)
 { // Remove the element at a specific index
-    if(index < 0 || index >= length) { // Check for valid index
+    if(index == -1) {
+        index = this->length - 1;
+    }
+    if(index < 0 || index >= this->length) { // Check for valid index
         std::stringstream errStr;
         errStr << "Error: Removal index " << index
                << " is out of bounds. Valid range: " << "[0, "
@@ -171,26 +180,30 @@ template<class T> void LinkedList<T>::remove_index(int index)
         delete temp;
     }
     else {
-        ListNode<T>* current = head;
+        ListNode<T>* current = this->head;
         for(int i = 0; i < index - 1; i++) { current = current->next; }
         ListNode<T>* temp = current->next;
         current->next = temp->next; // Bypass the node to be removed
         delete temp;
     }
-    length--; // Decrease the size
+    this->length--; // Decrease the size
 }
-template<class T> int LinkedList<T>::size()
+template<class T> int LinkedList<T>::size() const
 { // Get the current size of the list
-    return length; // Return the number of elements
+    return this->length; // Return the number of elements
 }
-template<class T> void LinkedList<T>::print()
+template<class T> void LinkedList<T>::print() const
 { // Print the contents of the list
-    ListNode<T>* current = head;
+    ListNode<T>* current = this->head;
     while(current != nullptr) { // Traverse through the list
         std::cout << current->data << " "; // Print each element
         current = current->next;
     }
     std::cout << std::endl; // New line after printing all elements
+}
+template<class T> bool LinkedList<T>::isEmpty() const
+{
+    return this->length == 0;
 }
 
 // Test Cases: No errors left
