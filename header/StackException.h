@@ -1,3 +1,4 @@
+// StackException.h
 #ifndef _StackException_H_
 #define _StackException_H_
 #include <sstream>

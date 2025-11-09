@@ -1,3 +1,4 @@
+// StackLinked.h
 #ifndef _StackLinked_H_
 #define _StackLinked_H_
 #include "StackException.h"

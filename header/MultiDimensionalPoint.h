@@ -1,6 +1,6 @@
+// MultiDimensionalPoint.h
 #ifndef MULTIDIMENSIONALPOINT_H
 #define MULTIDIMENSIONALPOINT_H
-
 #include <climits>
 #include <cmath>
 #include <cstdlib>
