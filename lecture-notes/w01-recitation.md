@@ -46,7 +46,8 @@ You need to complete the header file given below.
 #include <cstdlib>
 #include <iomanip>
 
-using namespace std;
+// using namespace std;
+// i don't use namespace std
 
 // Constructor to initialize a point with a given number of dimensions.
 // It allocates memory dynamically for coordinates based on the given dimensions.
