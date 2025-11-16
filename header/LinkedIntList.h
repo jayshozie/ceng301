@@ -5,8 +5,6 @@
 #include <sstream>
 #include <stdexcept>
 
-// TODO: TURN THIS INTO A TEMPLATE THAT HOLDS ALL TYPES OF VARIABLES
-
 class ListNode {
 public:
     int data; // Data part of the node

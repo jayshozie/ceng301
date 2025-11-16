@@ -1,6 +1,6 @@
+#include "ArrayList.h"
 #include "Complex.h"
 #include "LinkedList.h"
-#include "ArrayList.h"
 #include "StackArray.h"
 #include "StackLinked.h"
 #include <iostream>
@@ -48,15 +48,18 @@ int main()
               << std::endl;
     std::cout << "intCopyConstSt (pop) Top: " << intCopyConstSt.pop()
               << std::endl;
-    while(!intCopyConstSt.isEmpty()) {
-        try {
-            std::cout << "intCopyConstSt Pop: " << intCopyConstSt.pop();
-        }
-        catch(StackException e) {
-            break;
-        }
-        std::cout << std::endl;
-    }
+    std::cout << std::endl << "intCopyConstSt.print(): " << std::endl;
+    intCopyConstSt.print();
+    StackLinked<int> revTest = intCopySt;
+    std::cout << std::endl << "intCopySt.print(): " << std::endl;
+    intCopySt.print();
+    std::cout << std::endl << "revTest.print(): " << std::endl;
+    revTest.print();
+    revTest.reverse();
+    std::cout << std::endl
+              << "revTest.reverse();revTest.print();: " << std::endl;
+    revTest.print();
+    std::cout << "revTest (peek) Top: " << revTest.peek() << std::endl;
     // std::cout << "intCopyConstSt Size?: " << intCopyConstSt.size() <<
     // std::endl;
 }

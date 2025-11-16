@@ -34,6 +34,7 @@ public:
     int size() const;
     void print() const;
     bool isEmpty() const;
+    // T getHead() const; can be used for StackListADT.h
 };
 
 template<class T> LinkedList<T>::~LinkedList() // Destructor
@@ -47,15 +48,14 @@ template<class T> LinkedList<T>::~LinkedList() // Destructor
     // After this, head is automatically cleaned up as it's a pointer
 }
 template<class T> LinkedList<T>::LinkedList(const LinkedList<T>& rhs)
-{ // Copy constructor
-    this->head = nullptr; // Start with an empty list
-    this->length = 0; // Start with size 0
+    : head(nullptr), length(0)
+{
     ListNode<T>* current = rhs.head; // Pointer to traverse the original list
     while(current != nullptr) { // Traverse the rhs list
         this->add(current->data); // Add each element to the new list
         current = current->next;
     }
-}
+} // copy constructor
 template<class T>
 LinkedList<T>& LinkedList<T>::operator=(const LinkedList<T>& rhs)
 {
@@ -82,8 +82,8 @@ template<class T> void LinkedList<T>::add(T value, int index)
 { // Add an element at a specific index, we'll use the second constructor
     if(index == -1) { // default value to append
         index = this->length;
-    }
-    if(index < 0 || index > this->length) { // error handling
+    } // fixes index = -1
+    if(index < 0 || index > this->length) { // -1 index is not included
         std::stringstream errStr;
         errStr << "Error: " << index << " is out of bounds: " << "[0, "
                << this->length << "]" << std::endl;
@@ -95,6 +95,7 @@ template<class T> void LinkedList<T>::add(T value, int index)
 
     // insertion logic
     if(index == 0) { // insert at head
+         // head is new node with value value, next this->head
         this->head = new ListNode<T>(value, this->head);
     }
     else {
@@ -158,7 +159,7 @@ template<class T> void LinkedList<T>::set(T value, int index)
     current->data = value; // Set the data at the given index
 }
 template<class T> void LinkedList<T>::remove_value(T value)
-{
+{ // tbf, i'd prefer to implement this member function without using others
     int index = this->lookup_value(value);
     this->remove_index(index);
 }

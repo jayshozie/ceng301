@@ -4,7 +4,7 @@
 #include "StackException.h"
 #include <iostream>
 
-template<class T> class StackNode { // backwards because stack
+template<class T> class StackNode {
 public:
     T value;
     StackNode* next;
@@ -24,17 +24,18 @@ public:
     void push(const T& value);
     T pop();
     T peek() const;
+    void print();
+    void reverse();
     int size() const;
     bool isEmpty() const;
-    // definitions
-};
+}; // definitions
 
 template<class T> StackLinked<T>::StackLinked()
     : top(nullptr) {} // default constructor
 template<class T> StackLinked<T>::~StackLinked()
 {
     while(!this->isEmpty()) { this->pop(); }
-}
+} // destructor
 template<class T> StackLinked<T>::StackLinked(const StackLinked& rhs)
     : top(nullptr)
 { // copy constructor
@@ -42,17 +43,20 @@ template<class T> StackLinked<T>::StackLinked(const StackLinked& rhs)
     this->top = new StackNode<T>(rhs.top->value);
     StackNode<T>* reader = rhs.top->next;
     StackNode<T>* writer = this->top;
-    while(reader) {
+    while(reader != nullptr) { // if not reached end of stack
+        // writer's next is new node w/ value of reader
         writer->next = new StackNode<T>(reader->value);
-        writer = writer->next;
+        // writer->next->next = nullptr by def
+
+        writer = writer->next; // order of traversal doesn't matter
         reader = reader->next;
     }
 }
 template<class T>
 StackLinked<T>& StackLinked<T>::operator=(const StackLinked& rhs)
 {
-    if(this != &rhs) {
-        while(!this->isEmpty()) { this->pop(); }
+    if(this != &rhs) { // self-initialization check
+        while(!this->isEmpty()) { this->pop(); } // destroy the stack
 
         // !rhs.top would also work, because nullptr returns false
         if(rhs.top == nullptr) { this->top = nullptr; }
@@ -61,20 +65,21 @@ StackLinked<T>& StackLinked<T>::operator=(const StackLinked& rhs)
             this->top = new StackNode<T>(rhs.top->value);
             StackNode<T>* reader = rhs.top->next; // reader is top's next
             StackNode<T>* writer = this->top; // writer is this' top
-            while(reader) { // nullptr returns false
-                // writer's next is new node w/ value reader, next nullptr
+            while(reader != nullptr) { // if not reached end of stack
+                // writer's next is new node w/ value of reader
                 writer->next = new StackNode<T>(reader->value);
+                // writer->next->next = nullptr by def
 
-                writer = writer->next; // traverse
-                reader = reader->next; // traverse
+                writer = writer->next; // order of traversal doesn't matter
+                reader = reader->next;
             }
         } // rhs != nullptr
     } // if(this != &rhs)
     return *this;
-}
+} // copy assignment operator
 template<class T> void StackLinked<T>::push(const T& value)
 {
-    // create new node
+    // create new node with value value, and next this->top
     this->top = new StackNode<T>(value, this->top);
 }
 template<class T> T StackLinked<T>::pop()
@@ -102,6 +107,39 @@ template<class T> T StackLinked<T>::peek() const
     else { // if not empty
         return this->top->value; // return top value
     }
+}
+template<class T> void StackLinked<T>::print()
+{
+    StackLinked<T> backup;
+    int index = 0;
+    std::cout << "---v--- Top ---v---" << std::endl;
+    while(!this->isEmpty()) {
+        try {
+            backup.push(this->peek());
+            std::cout << this->pop();
+            index++;
+        }
+        catch(StackException e) {
+            break;
+        }
+        std::cout << std::endl;
+    }
+    std::cout << "--^-- Bottom --^--" << std::endl;
+    backup.reverse();
+    *this = backup;
+}
+template<class T> void StackLinked<T>::reverse()
+{
+    StackLinked<T> backup;
+    while(!this->isEmpty()) {
+        try {
+            backup.push(this->pop());
+        }
+        catch(StackException e) {
+            break;
+        }
+    }
+    *this = backup;
 }
 template<class T> int StackLinked<T>::size() const
 {
