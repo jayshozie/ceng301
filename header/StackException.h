@@ -14,11 +14,15 @@ public:
     // from std::exception, and after that inheritance, you should create a
     // member function called `what()` with return type `const char*`, and that
     // function should have the properties `const`, `noexcept`, `override`.
-    // const, because you don't want the function to be able to change the
-    // string provided in the argument, noexcept because this function itself
-    // is the exception, it shouldn't cause any exception itself, and override
-    // because the when you inherit std::exception, you already have a function
-    // called `what()` and you need to override the default one.
+    //
+    // - const: Guarantees that the function will NOT change any data members
+    //          of the exception object (like `errStr`). Since `what()` is
+    //          only meant to read the error message, this enforces safety.
+    // - noexcept: Because this function itself is the exception reporter,
+    //             it should never throw an exception itself.
+    // - override: Because when you inherit std::exception, you already have a
+    //             virtual function called `what()`, and you must override
+    //             the default one to provide your custom message.
 };
 
 #endif
