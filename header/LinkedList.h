@@ -5,15 +5,13 @@
 #include <sstream>
 #include <stdexcept>
 
-// TODO: TURN THIS INTO A TEMPLATE THAT HOLDS ALL TYPES OF VARIABLES
-
 template<class T> class ListNode {
 public:
-    T data; // Data part of the node
-    ListNode<T>* next; // Pointer to the next node
-    ListNode<T>(T value): data(value), next(nullptr) {} // Constructor for nodes
+    T data; // data part of the node
+    ListNode<T>* next; // pointer to the next node
+    ListNode<T>(T value): data(value), next(nullptr) {} // constructor for nodes
     ListNode<T>(T value, ListNode<T>* ptr)
-        : data(value), next(ptr) {} // Constructor with next pointer
+        : data(value), next(ptr) {} // constructor with next pointer
 };
 
 template<class T> class LinkedList {
