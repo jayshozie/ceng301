@@ -5,38 +5,37 @@
 #include <sstream>
 #include <stdexcept>
 
-// TODO: TURN THIS INTO A TEMPLATE THAT HOLDS ALL TYPES OF VARIABLES
-
-class ArrayList {
+template<class T> class ArrayList {
 private:
-    int* arr; // Pointer to the dynamic array
+    T* arr; // Pointer to the dynamic array
     int length; // Current number of elements in the list
     int capacity;
 public:
     ArrayList(): capacity(1), length(0)
-    { // Constructor
-        this->arr = new int[capacity]; // Initialize an empty dynamic array
+    { // constructor
+        // initialize an empty dynamic array
+        this->arr = new T[this->capacity];
     }
     ~ArrayList()
-    { // Destructor
+    { // destructor
         delete[] this->arr; // Clean up the dynamic array
     }
 
     ArrayList(const ArrayList& rhs): length(rhs.length), capacity(rhs.capacity)
-    { // Copy constructor
-        this->arr = new int[this->capacity]; // Create a new array
+    { // copy constructor
+        this->arr = new T[this->capacity]; // Create a new array
         for(int i = 0; i < this->length; i++) { // Copy elements
             this->arr[i] = rhs.arr[i];
         }
     }
     ArrayList& operator=(const ArrayList& rhs)
-    { // Assignment operator
+    { // copy assignment operator
         if(this != &rhs) { // Self-assignment check
             if(this->capacity < rhs.length) {
                 delete[] this->arr;
-                this->arr = new int[rhs.capacity];
+                this->capacity = rhs.capacity;
+                this->arr = new T[this->capacity];
             }
-            this->capacity = rhs.capacity; // Copy the capacity
             this->length = rhs.length; // Copy the length
             for(int i = 0; i < this->length; i++) { // Copy elements
                 this->arr[i] = rhs.arr[i];
@@ -44,7 +43,7 @@ public:
         }
         return *this; // Return the current object
     }
-    void add(int value, int index = -1)
+    void add(T value, int index = -1)
     { // Add an element at a specific index
         if(index == -1) { // default value to append
             index = this->length;
@@ -52,13 +51,13 @@ public:
         if(index < 0 || index > this->length) { // Check for valid index
             std::stringstream errStr;
             errStr << "Error: " << index << " is out of bounds: " << "[0, "
-               << this->length << "]" << std::endl;
+                   << this->length << "]" << std::endl;
             throw std::out_of_range(errStr.str()); // Error handling
         }
         if(this->length >= this->capacity) { // not enough capacity
             int newCapacity = (this->capacity == 0) ? 1 : this->capacity * 2;
-            int* newArr = new int[newCapacity]; // Create a new array with
-                                                // increased size
+            T* newArr = new T[newCapacity]; // Create a new array with
+                                            // increased size
             for(int i = 0; i < index; i++) { // Copy elements before the index
                 newArr[i] = this->arr[i];
             }
@@ -80,7 +79,7 @@ public:
         }
         this->length++;
     }
-    int lookup_value(int value)
+    int lookup_value(T value)
     {
         for(int i = 0; i < this->length; i++) {
             if(this->arr[i] == value) { return i; }
@@ -94,24 +93,24 @@ public:
         if(index < 0 || index >= this->length) { // Check for valid index
             std::stringstream errStr;
             errStr << "Error: Lookup index " << index
-               << " is out of bounds. Valid range: " << "[0, "
-               << this->length - 1 << "]" << std::endl;
+                   << " is out of bounds. Valid range: " << "[0, "
+                   << this->length - 1 << "]" << std::endl;
             throw std::out_of_range(errStr.str()); // Error handling
         }
         return this->arr[index]; // Return the element at the given index
     }
-    void set(int value, int index)
+    void set(T value, int index)
     { // Set the element at a specific index
         if(index < 0 || index >= this->length) { // Check for valid index
             std::stringstream errStr;
             errStr << "Error: Set index " << index
-               << " is out of bounds. Valid range: " << "[0, "
-               << this->length - 1 << "]" << std::endl;
+                   << " is out of bounds. Valid range: " << "[0, "
+                   << this->length - 1 << "]" << std::endl;
             throw std::out_of_range(errStr.str()); // Error handling
         }
         this->arr[index] = value; // Set the element at the given index
     }
-    void remove_value(int value)
+    void remove_value(T value)
     {
         int index = lookup_value(value);
         remove_index(index);
@@ -121,8 +120,8 @@ public:
         if(index < 0 || index >= this->length) { // Check for valid index
             std::stringstream errStr;
             errStr << "Error: Removal index " << index
-               << " is out of bounds. Valid range: " << "[0, "
-               << this->length - 1 << "]" << std::endl;
+                   << " is out of bounds. Valid range: " << "[0, "
+                   << this->length - 1 << "]" << std::endl;
             throw std::out_of_range(errStr.str()); // Error handling
         }
         for(int i = index; i < this->length - 1;
