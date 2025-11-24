@@ -55,12 +55,12 @@ have the original license and copyright notice.
 4. You can view the files directly in your browser.
 
 ## File Info's
-**Languages Used:** C++
+**Languages Used:** C-style C++
 
 - **[/lecture-notes](./lecture-notes):** These are my lecture notes compiled
 from the stuff the instructor said during lecture hours, the slides provided
 by the instructor, and stuff that I've added. They're written as
-Github-flavored markdowns, and uses that syntax, so I highly recommend you to
+Github Flavored Markdowns, and uses that syntax, so I highly recommend you to
 view them on Github. You can follow the course from these, they don't miss
 anything that is in the slides, on the contrary you'll probably learn more,
 because I add stuff that are not available on the slides but more than
@@ -83,10 +83,9 @@ They are meant to be solved without outside help in an hour or so. I'll try to
 provide the questions with as much detail as I can remember but we're not
 allowed to use our phones, so I won't be able to get the exact wording.
 
-- **[/online-exercises](./online-exercises):** These are multiple-choice
-quizzes given on ODTÜClass every week. I may not be able to provide every
-option for every question, because after solving the quiz you can only see the
-answer you've picked and the correct one.
+- **[/header](./header):** These are the header files written in the course. I
+did over-engineered some of them, so there may be more member functions, and
+straight up more headers than the one's written in the course.
 
 ## Licensing
 
