@@ -2,5 +2,6 @@
 
 int main()
 {
-
+    int avg;
+    std::cout << avg << std::endl;
 }
