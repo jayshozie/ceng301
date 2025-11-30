@@ -1,0 +1,43 @@
+#!/usr/bin/env bash
+
+EMPTY_LINE=''
+
+echo $EMPTY_LINE
+echo 'Compiling...'
+echo $EMPTY_LINE
+
+# Define file paths for clarity and reuse
+SOURCE_FILE=~/ceng301/testBench.cpp
+OUTPUT_FILE=~/ceng301/testBench.o
+
+# 1. Attempt to compile the C++ file
+# g++ outputs compilation errors to stderr, which the user will see in the terminal
+g++ -std=c++11 "$SOURCE_FILE" -o "$OUTPUT_FILE"
+
+# Store the exit status of the last command (g++)
+COMPILATION_STATUS=$?
+
+# 2. Check the exit status
+if [ $COMPILATION_STATUS -eq 0 ]; then
+    # SUCCESS: Exit status is 0
+    echo '[INFO] Compiled without errors.'
+    echo $EMPTY_LINE
+    echo 'Running...'
+    echo $EMPTY_LINE
+    
+    # Execute the compiled program
+    "$OUTPUT_FILE"
+    
+    # Delete the executable after execution
+    rm -f "$OUTPUT_FILE"
+else
+    # ERROR: Exit status is non-zero (g++ failed)
+    
+    # The requirement was to delete testBench.exe if an error occurred.
+    # g++ usually doesn't create the file on error, but we delete it just in case.
+    rm -f "$OUTPUT_FILE"
+    
+    # Echo the required error message
+    echo $EMPTY_LINE
+    echo '[ERROR] Cannot compile, see above for the raised error.'
+fi
