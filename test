@@ -12,7 +12,7 @@ OUTPUT_FILE=~/ceng301/testBench.o
 
 # 1. Attempt to compile the C++ file
 # g++ outputs compilation errors to stderr, which the user will see in the terminal
-g++ -std=c++11 "$SOURCE_FILE" -o "$OUTPUT_FILE"
+g++ -std=gnu++11 "$SOURCE_FILE" -o "$OUTPUT_FILE"
 
 # Store the exit status of the last command (g++)
 COMPILATION_STATUS=$?
