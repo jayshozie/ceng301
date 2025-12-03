@@ -52,4 +52,4 @@ public:
                                            int numberOfPoints, int k) const;
 };
 
-#endif
+#endif // MULTIDIMENSIONALPOINT_H

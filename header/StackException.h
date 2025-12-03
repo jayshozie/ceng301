@@ -25,4 +25,4 @@ public:
     //             the default one to provide your custom message.
 };
 
-#endif
+#endif // _StackException_H_

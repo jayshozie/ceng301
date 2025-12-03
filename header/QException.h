@@ -11,4 +11,4 @@ public:
     const char* what() const noexcept override { return errStr.c_str(); }
 };
 
-#endif
+#endif // _QEXCEPTION_H_

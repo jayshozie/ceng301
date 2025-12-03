@@ -97,4 +97,4 @@ template<class T> bool StackArray<T>::isFull() const
     return this->top == this->capacity - 1;
 }
 
-#endif
+#endif // _StackArray_H_

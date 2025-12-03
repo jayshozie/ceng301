@@ -31,4 +31,4 @@ template<class T> bool StackListADT<T>::isEmpty() const
     return this->list.isEmpty();
 }
 
-#endif
+#endif // _StackListADT_H_

@@ -1,3 +1,5 @@
+#ifndef _LINKEDLIST_H_
+#define _LINKEDLIST_H_
 #include "LinkedList.h"
 #include "QException.h"
 
@@ -29,3 +31,4 @@ template<class T> T Queue<T>::dequeue() {}
 template<class T> T Queue<T>::peek() {}
 template<class T> int Queue<T>::size() const {}
 template<class T> bool Queue<T>::isEmpty() const {}
+#endif

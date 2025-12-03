@@ -1,5 +1,7 @@
 // Queue.h
 // linked list implementation
+#ifndef _QEXCEPTION_H_
+#define _QEXCEPTION_H_
 #include "QException.h"
 
 template<class T> class QNode {
@@ -109,6 +111,9 @@ template<class T> bool Queue<T>::isEmpty() const
     return this->back == nullptr;
     // or return this->count == 0
 }
+
+#endif
+
 // TEST
 // Copy the rest to a different .cpp file.
 // #include "Queue.h" // Assuming your Queue.h is the final, corrected version

@@ -232,4 +232,4 @@ template<class T> bool CircularDoublyLinkedList<T>::isEmpty() const
 //     delete listB;
 // }
 
-#endif
+#endif // _Circular_Doubly_Linked_List_H_

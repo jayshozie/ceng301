@@ -159,7 +159,7 @@ template<class T> bool StackLinked<T>::isEmpty() const
     return this->top == nullptr;
 }
 
-#endif
+#endif // _StackLinked_H_
 // For Test Uses Only!
 // Copy the rest to a different .cpp file!
 // #include "StackLinked.h"

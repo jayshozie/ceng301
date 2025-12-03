@@ -76,4 +76,4 @@ public:
     }
 };
 
-#endif
+#endif // _Complex_Float_H_

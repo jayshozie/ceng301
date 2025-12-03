@@ -230,4 +230,4 @@ template<class T> bool LinkedList<T>::isEmpty() const
 //     delete listB;
 // }
 
-#endif
+#endif // _Linked_List_H_

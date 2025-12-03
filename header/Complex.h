@@ -78,4 +78,4 @@ template<class T> void Complex<T>::print() const
               << ')' << std::endl;
 }
 
-#endif
+#endif // _Complex_H_
