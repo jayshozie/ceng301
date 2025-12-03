@@ -35,18 +35,17 @@ template<class T> StackArray<T>::StackArray(const StackArray<T>& rhs)
 {
     for(int i = 0; i <= this->top; i++) { this->items[i] = rhs.items[i]; }
 }
-template<class T> StackArray<T>& StackArray<T>::operator=(const StackArray<T>& rhs)
+template<class T>
+StackArray<T>& StackArray<T>::operator=(const StackArray<T>& rhs)
 {
-    if (this != &rhs) {
-        if (this->capacity != rhs.capacity) {
+    if(this != &rhs) {
+        if(this->capacity != rhs.capacity) {
             delete[] this->items;
             this->capacity = rhs.capacity;
             this->items = new T[this->capacity];
         }
         this->top = rhs.top;
-        for (int i = 0; i <= this->top; i++) {
-            this->items[i] = rhs.items[i];
-        }
+        for(int i = 0; i <= this->top; i++) { this->items[i] = rhs.items[i]; }
     }
     return *this;
 }

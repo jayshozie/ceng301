@@ -86,7 +86,7 @@ public:
         if(index < 0 || index > this->length) { // error handling
             std::stringstream errStr;
             errStr << "Error: " << index << " is out of bounds: " << "[0, "
-               << this->length << "]" << std::endl;
+                   << this->length << "]" << std::endl;
             throw std::out_of_range(errStr.str()); // Error handling
         }
         // if (this->length == 0) {
@@ -126,8 +126,8 @@ public:
         if(index < 0 || index >= length) { // Check for valid index
             std::stringstream errStr;
             errStr << "Error: Lookup index " << index
-               << " is out of bounds. Valid range: " << "[0, "
-               << this->length - 1 << "]" << std::endl;
+                   << " is out of bounds. Valid range: " << "[0, "
+                   << this->length - 1 << "]" << std::endl;
             throw std::out_of_range(errStr.str()); // Error handling
         }
         ListNode* current = head;
@@ -141,8 +141,8 @@ public:
         if(index < 0 || index >= length) { // Check for valid index
             std::stringstream errStr;
             errStr << "Error: Set index " << index
-               << " is out of bounds. Valid range: " << "[0, "
-               << this->length - 1 << "]" << std::endl;
+                   << " is out of bounds. Valid range: " << "[0, "
+                   << this->length - 1 << "]" << std::endl;
             throw std::out_of_range(errStr.str()); // Error handling
         }
         ListNode* current = head;
@@ -161,8 +161,8 @@ public:
         if(index < 0 || index >= length) { // Check for valid index
             std::stringstream errStr;
             errStr << "Error: Removal index " << index
-               << " is out of bounds. Valid range: " << "[0, "
-               << this->length - 1 << "]" << std::endl;
+                   << " is out of bounds. Valid range: " << "[0, "
+                   << this->length - 1 << "]" << std::endl;
             throw std::out_of_range(errStr.str()); // Error handling
         }
         if(index == 0) { // Remove the head

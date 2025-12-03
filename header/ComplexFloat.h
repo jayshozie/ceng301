@@ -6,7 +6,6 @@
 #include <sstream>
 #include <stdexcept>
 
-
 class Complex {
 private:
     float re, im; // by default private

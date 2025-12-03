@@ -58,7 +58,7 @@ void MultiDimensionalPoint::setCoordinate(int x, double value)
     if(x < 0 || x >= this->dimension) {
         std::stringstream errStr;
         errStr << "ERR:: " << x << " is out of range. Valid range: [0, "
-           << this->dimension - 1 << "]" << std::endl;
+               << this->dimension - 1 << "]" << std::endl;
         throw std::out_of_range(errStr.str());
     }
     this->coordinates[x] = value;
@@ -89,7 +89,7 @@ MultiDimensionalPoint::euclideanDistance(const MultiDimensionalPoint& rhs) const
     if(this->dimension != rhs.dimension) {
         std::stringstream errStr;
         errStr << "ERR: Dimensions don't match: " << this->dimension
-           << " != " << rhs.dimension << std::endl;
+               << " != " << rhs.dimension << std::endl;
         throw std::out_of_range(errStr.str());
     }
     double total = 0;
@@ -109,7 +109,7 @@ MultiDimensionalPoint::manhattanDistance(const MultiDimensionalPoint& rhs) const
     if(this->dimension != rhs.dimension) {
         std::stringstream errStr;
         errStr << "ERR: Dimensions don't match: " << this->dimension
-           << " != " << rhs.dimension << std::endl;
+               << " != " << rhs.dimension << std::endl;
         throw std::out_of_range(errStr.str());
     }
     double total = 0;
@@ -183,7 +183,7 @@ MultiDimensionalPoint::kClosestPoints(MultiDimensionalPoint* pointsArray,
     if(numberOfPoints < k) {
         std::stringstream errStr;
         errStr << "ERR: Not enough points: " << numberOfPoints << " < " << k
-           << std::endl;
+               << std::endl;
         throw std::out_of_range(errStr.str());
     }
     else {

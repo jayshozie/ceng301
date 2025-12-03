@@ -93,7 +93,7 @@ template<class T> void LinkedList<T>::add(T value, int index)
 
     // insertion logic
     if(index == 0) { // insert at head
-         // head is new node with value value, next this->head
+        // head is new node with value value, next this->head
         this->head = new ListNode<T>(value, this->head);
     }
     else {
@@ -122,9 +122,7 @@ template<class T> int LinkedList<T>::lookup_value(T value) const
 template<class T> T LinkedList<T>::lookup_index(int index) const
 { // Get the element at a specific index
     // get func via index logic
-    if(index == -1) {
-        index = this->length - 1;
-    }
+    if(index == -1) { index = this->length - 1; }
     if(index < 0 || index >= this->length) { // Check for valid index
         std::stringstream errStr;
         errStr << "Error: Lookup index " << index
@@ -140,9 +138,7 @@ template<class T> T LinkedList<T>::lookup_index(int index) const
 }
 template<class T> void LinkedList<T>::set(T value, int index)
 { // Set the element at a specific index
-    if(index == -1) {
-        index = this->length - 1;
-    }
+    if(index == -1) { index = this->length - 1; }
     if(index < 0 || index >= this->length) { // Check for valid index
         std::stringstream errStr;
         errStr << "Error: Set index " << index
@@ -163,9 +159,7 @@ template<class T> void LinkedList<T>::remove_value(T value)
 }
 template<class T> void LinkedList<T>::remove_index(int index)
 { // Remove the element at a specific index
-    if(index == -1) {
-        index = this->length - 1;
-    }
+    if(index == -1) { index = this->length - 1; }
     if(index < 0 || index >= this->length) { // Check for valid index
         std::stringstream errStr;
         errStr << "Error: Removal index " << index

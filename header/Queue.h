@@ -1,7 +1,7 @@
 // Queue.h
 // linked list implementation
-#ifndef _QEXCEPTION_H_
-#define _QEXCEPTION_H_
+#ifndef _QUEUE_H_
+#define _QUEUE_H_
 #include "QException.h"
 
 template<class T> class QNode {
@@ -112,7 +112,7 @@ template<class T> bool Queue<T>::isEmpty() const
     // or return this->count == 0
 }
 
-#endif
+#endif // _QUEUE_H_
 
 // TEST
 // Copy the rest to a different .cpp file.
@@ -123,13 +123,14 @@ template<class T> bool Queue<T>::isEmpty() const
 //
 // // Helper to run a test and print the result
 // #define RUN_TEST(testName, expression) \
-//     std::cout << (expression ? "[PASS] " : "[FAIL] ") << testName << std::endl;
+//     std::cout << (expression ? "[PASS] " : "[FAIL] ") << testName <<
+//     std::endl;
 //
 // // --- Test Suite ---
 //
 // void test_initial_state() {
-//     std::cout << "\n--- Test 1: Initial State & Empty Queue ---" << std::endl;
-//     Queue<int> q;
+//     std::cout << "\n--- Test 1: Initial State & Empty Queue ---" <<
+//     std::endl; Queue<int> q;
 //
 //     // Test 1.1: Is empty initially?
 //     RUN_TEST("1.1 isEmpty() on new queue", q.isEmpty());
@@ -187,9 +188,8 @@ template<class T> bool Queue<T>::isEmpty() const
 // }
 //
 // void test_one_node_case() {
-//     std::cout << "\n--- Test 3: One-Node Queue State (Front == Back) ---" << std::endl;
-//     Queue<char> q;
-//     q.enqueue('X');
+//     std::cout << "\n--- Test 3: One-Node Queue State (Front == Back) ---" <<
+//     std::endl; Queue<char> q; q.enqueue('X');
 //
 //     // Test 3.1: Size is 1
 //     RUN_TEST("3.1 Size is 1", q.size() == 1);
@@ -200,13 +200,14 @@ template<class T> bool Queue<T>::isEmpty() const
 //     // Test 3.3: Queue is empty
 //     RUN_TEST("3.3 Queue is empty after 1-node dequeue", q.isEmpty());
 //
-//     // Test 3.4: Re-enqueue works after clearing (check for dangling back pointer)
-//     q.enqueue('Y');
-//     RUN_TEST("3.4 Re-enqueue works", q.peek() == 'Y');
+//     // Test 3.4: Re-enqueue works after clearing (check for dangling back
+//     pointer) q.enqueue('Y'); RUN_TEST("3.4 Re-enqueue works", q.peek() ==
+//     'Y');
 // }
 //
 // void test_rule_of_three() {
-//     std::cout << "\n--- Test 4: Rule of Three (Memory Safety/Deep Copy) ---" << std::endl;
+//     std::cout << "\n--- Test 4: Rule of Three (Memory Safety/Deep Copy) ---"
+//     << std::endl;
 //
 //     Queue<double> q1;
 //     q1.enqueue(1.1);
@@ -236,16 +237,19 @@ template<class T> bool Queue<T>::isEmpty() const
 //     RUN_TEST("4.2.1 Constructor: Size is 3", q3.size() == 3);
 //
 //     // **CRITICAL TEST 2: Memory Safety**
-//     // q2 goes out of scope here (if this were a function), but since they are in main,
+//     // q2 goes out of scope here (if this were a function), but since they
+//     are in main,
 //     // we use dequeue to simulate memory release, ensuring q3 still works.
 //     q2.dequeue();
 //     q2.dequeue();
 //     q2.dequeue(); // q2 is now empty, its memory is deleted.
 //
-//     // Test 4.2.2: q3 must still contain its independent data (Deep Copy check)
-//     RUN_TEST("4.2.2 SAFETY: q3 still has data (1.1)", q3.peek() == 1.1);
+//     // Test 4.2.2: q3 must still contain its independent data (Deep Copy
+//     check) RUN_TEST("4.2.2 SAFETY: q3 still has data (1.1)", q3.peek()
+//     == 1.1);
 //
-//     // If the program reaches the end of main without a 'double free', the destructor/copy ops are safe.
+//     // If the program reaches the end of main without a 'double free', the
+//     destructor/copy ops are safe.
 // }
 //
 // int main() {
