@@ -1,4 +1,11 @@
-// StackLinked.h
+/* MIT License
+ * Copyright (c) 2025 Emir Baha Yıldırım
+ * Please see the LICENSE file for more details.
+ *
+ * ======== StackLinked.h ========
+ * This is the header StackLinked.h defining and implementing an implementation
+ * of a Stack using a Linked List.
+ */
 #ifndef _StackLinked_H_
 #define _StackLinked_H_
 #include "StackException.h"

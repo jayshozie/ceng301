@@ -1,4 +1,11 @@
-// MultiDimensionalPoint.h
+/* MIT License
+ * Copyright (c) 2025 Emir Baha Yıldırım
+ * Please see the LICENSE file for more details.
+ *
+ * ======== MultiDimensionalPoint.h ========
+ * This is the header MultiDimensionalPoint.h defining a multi dimensional point
+ * class.
+ */
 #ifndef MULTIDIMENSIONALPOINT_H
 #define MULTIDIMENSIONALPOINT_H
 #include <climits>

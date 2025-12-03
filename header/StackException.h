@@ -1,4 +1,11 @@
-// StackException.h
+/* MIT License
+ * Copyright (c) 2025 Emir Baha Yıldırım
+ * Please see the LICENSE file for more details.
+ *
+ * ======== StackException.h ========
+ * This is the header StackException.h defining a new exception for the stack
+ * implementations.
+ */
 #ifndef _StackException_H_
 #define _StackException_H_
 #include <sstream>

@@ -1,4 +1,11 @@
-// ComplexFloat.h
+/* MIT License
+ * Copyright (c) 2025 Emir Baha Yıldırım
+ * Please see the LICENSE file for more details.
+ *
+ * ======== ComplexFloat.h ========
+ * This is the header ComplexFloat.h defining and implementing a Complex number
+ * class that can only hold floats as its real and imaginary part.
+ */
 #ifndef _Complex_Float_H_
 #define _Complex_Float_H_
 #include <iostream>

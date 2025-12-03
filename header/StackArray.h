@@ -1,4 +1,11 @@
-// StackArray.h
+/* MIT License
+ * Copyright (c) 2025 Emir Baha Yıldırım
+ * Please see the LICENSE file for more details.
+ *
+ * ======== StackArray.h ========
+ * This is the header StackArray.h defining and implementing a Stack
+ * implementation using an array.
+ */
 #ifndef _StackArray_H_
 #define _StackArray_H_
 #include "StackException.h"

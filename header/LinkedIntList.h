@@ -1,4 +1,11 @@
-// LinkedList.h
+/* MIT License
+ * Copyright (c) 2025 Emir Baha Yıldırım
+ * Please see the LICENSE file for more details.
+ *
+ * ======== LinkedIntList.h ========
+ * This is the header LinkedIntList.h defining a Linked List class that can only
+ * hold int values.
+ */
 #ifndef _Linked_List_H_
 #define _Linked_List_H_
 #include <iostream>

@@ -1,6 +1,13 @@
-// CircularLinkedList.h
-#ifndef _Circular_Doubly_Linked_List_H_
-#define _Circular_Doubly_Linked_List_H_
+/* MIT License
+ * Copyright (c) 2025 Emir Baha Yıldırım
+ * Please see the LICENSE file for more details.
+ *
+ * ======== CircularDoublyLinkedList.h ========
+ * This is the header CircularDoublyLinkedList.h defining a doubly linked
+ * circular list.
+ */
+#ifndef _CIRCULAR_DOUBLY_LINKED_LIST_H_
+#define _CIRCULAR_DOUBLY_LINKED_LIST_H_
 #include <iostream>
 #include <sstream>
 #include <stdexcept>
@@ -232,4 +239,4 @@ template<class T> bool CircularDoublyLinkedList<T>::isEmpty() const
 //     delete listB;
 // }
 
-#endif // _Circular_Doubly_Linked_List_H_
+#endif // _CIRCULAR_DOUBLY_LINKED_LIST_H_

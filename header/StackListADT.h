@@ -1,3 +1,11 @@
+/* MIT License
+ * Copyright (c) 2025 Emir Baha Yıldırım
+ * Please see the LICENSE file for more details.
+ *
+ * ======== StackListADT.h ========
+ * This is the header StackListADT.h defining and implementing a Stack using
+ * the header LinkedList.h that defines and implements a Linked List.
+ */
 #ifndef _StackListADT_H_
 #define _StackListADT_H_
 #include "LinkedList.h"

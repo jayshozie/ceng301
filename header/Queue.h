@@ -1,5 +1,11 @@
-// Queue.h
-// linked list implementation
+/* MIT License
+ * Copyright (c) 2025 Emir Baha Yıldırım
+ * Please see the LICENSE file for more details.
+ *
+ * ======== Queue.h ========
+ * This is the header Queue.h defining and implementing a Queue ADT using a
+ * Linked List.
+ */
 #ifndef _QUEUE_H_
 #define _QUEUE_H_
 #include "QException.h"

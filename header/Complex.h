@@ -1,4 +1,11 @@
-// Complex.h
+/* MIT License
+ * Copyright (c) 2025 Emir Baha Yıldırım
+ * Please see the LICENSE file for more details.
+ *
+ * ======== Complex.h ========
+ * This is the header Complex.h defining and implementing a Complex number
+ * template class.
+ */
 #ifndef _Complex_H_
 #define _Complex_H_
 #include <iostream>

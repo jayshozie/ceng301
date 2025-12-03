@@ -1,4 +1,11 @@
-// MultiDimensionalPoint.cpp
+/* MIT License
+ * Copyright (c) 2025 Emir Baha Yıldırım
+ * Please see the LICENSE file for more details.
+ *
+ * ======== MultiDimensionalPoint.cpp ========
+ * This is the header MultiDimensionalPoint.cpp implementing the multi
+ * dimensional point class defined in MultiDimensionalPoint.h
+ */
 #include "MultiDimensionalPoint.h"
 
 // Constructor to initialize a point with a given number of dimensions.

@@ -1,4 +1,11 @@
-// LinkedList.h
+/* MIT License
+ * Copyright (c) 2025 Emir Baha Yıldırım
+ * Please see the LICENSE file for more details.
+ *
+ * ======== LinkedList.h ========
+ * This is the header LinkedList.h defining and implementing a Linked List
+ * class template.
+ */
 #ifndef _Linked_List_H_
 #define _Linked_List_H_
 #include <iostream>
