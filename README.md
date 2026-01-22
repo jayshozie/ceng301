@@ -125,7 +125,7 @@ copyright issues or concerns.
 
 If you have any questions, suggestions, or contributions; please feel free to
 open an issue or pull request. Your feedback is always welcome. I will try to
-keep this repository up to date with the late stcourse materials and resources
+keep this repository up to date with the latest course materials and resources
 for as long as I can.
 
 # Course Info
@@ -133,4 +133,8 @@ for as long as I can.
 - Course Name: CENG301 - Algorithms and Data Structures
 - Course Website: [CENG301](https://saksagan.ceng.metu.edu.tr/courses/ceng301/)
 - Semester Taken: Fall 2025
-- Book: [N/A yet.](README.md)
+- Book: [Weiss, M., A., Data Structures and Algorithm Analysis in C++ 4th Ed.](https://search.worldcat.org/title/842350506)
+
+> [!NOTE]
+> You can contact me via GitHub if you can't afford/would like to borrow the
+> book.
