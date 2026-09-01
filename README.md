@@ -23,7 +23,7 @@ operating system.
     <summary> Bash (Linux Based Distros) </summary>
 
 ### Bash
-```console
+```bash
 foo@bar:~$ git clone https://github.com/jayshozie/ceng301
 foo@bar:~$ cd ceng301
 foo@bar:~/ceng301$
@@ -34,7 +34,7 @@ You can find the material in the folder `ceng301` that git just created.
     <summary> Command Prompt (Windows) </summary>
 
 ### Command Prompt
-```console
+```cmd
 C:\Users\foo\Desktop> git clone https://github.com/jayshozie/ceng301
 C:\Users\foo\Desktop> cd ceng301
 C:\Users\foo\Desktop\ceng301>
@@ -68,7 +68,7 @@ essential for the course.
 
 - **[/exercises](./exercises):** These are C++ algorithms and data structures
 examples that I've either created myself or found on the internet. Each of them
-have it's own solution in [/exercises/solutions](./exercises/solutions). I
+have its own solution in [/exercises/solutions](./exercises/solutions). I
 recommend you to try to solve them, and then check the solution.
 
 - **[/assignments](./assignments):** These are online assignments that I was
